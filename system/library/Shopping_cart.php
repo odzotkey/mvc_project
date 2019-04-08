@@ -42,8 +42,10 @@ unset($_SESSION["cart"][$index]);
 
 public function display(){
 $dis= [];
-foreach($_SESSION["cart"] as $key =>$val){
-$dis[] = $val;
+if(!empty($_SESSION["cart"])){
+   foreach($_SESSION["cart"] as $key =>$val){
+   $dis[] = $val;
+}  
 }
 return $dis;
 }
